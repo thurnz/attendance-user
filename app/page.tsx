@@ -46,7 +46,7 @@ export default function Home() {
       {mobile && 
         <div className="text-sm cursor-pointer underline p-10 my-10" onClick={handleBiometric}>Login using biometric</div>
       }
-      <Link href="/register" className="text-sm absolute bottom-10 underline">Don't have an account? <span className="font-bold">Register</span></Link>
+      <Link href="/register" className="text-sm absolute bottom-10 underline">Don&apos;t have an account? <span className="font-bold">Register</span></Link>
     </div>
   );
 }
