@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import { Fragment } from 'react';
 
 export default function Register() {
   
   return (
-    <div className="flex justify-center flex-col items-center">
+    <Fragment>
       <div>
         <label>ID NUMBER</label>
         <br></br>
@@ -27,7 +28,7 @@ export default function Register() {
       <Link href="/">
         <button className="my-10">REGISTER</button>
       </Link>
-      <Link href="/" className="text-sm absolute bottom-10 underline">Cancel</Link>
-    </div>
+      <Link href="/" className="text-sm underline p-5">Cancel</Link>
+    </Fragment>
   );
 }

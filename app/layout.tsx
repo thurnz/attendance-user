@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Image from 'next/image';
+import Context from '@/contexts/context';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,16 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className='w-screen h-1/4 min-h-min flex relative m-5'>
-          <Image
-            priority
-            src='/images/Ph_seal_cebucity.png'
-            fill={true}
-            objectFit='contain'
-            alt=''
-          />
-        </header>
-        <main className='w-screen px-10 h-3/4 flex justify-center'>{children}</main>
+        <Context>{children}</Context>
       </body>
     </html>
   );

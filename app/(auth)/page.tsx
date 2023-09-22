@@ -1,14 +1,15 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useContext, useEffect, Fragment } from 'react';
+import { DataContext } from '@/contexts/context';
 import Link from 'next/link';
 import _ from 'underscore';
 
 export default function Home() {
-  const [mobile, setMobile] = useState(false);
+  const { isMobile, setIsMobile } = useContext(DataContext);
 
   useEffect(() => {
     const handleResize = _.debounce(() => {
-      setMobile(window.innerWidth < window.innerHeight);
+      setIsMobile(window.innerWidth < window.innerHeight);
     }, 500);
 
     handleResize();
@@ -27,10 +28,10 @@ export default function Home() {
   const handleBiometric = () => {
     console.log('bio');
   }
-  
+
   return (
-    <div className="flex justify-center flex-col items-center">
-      {!mobile && 
+    <Fragment>
+      {!isMobile &&
         <div>
           <label>ID NUMBER</label>
           <br></br>
@@ -42,11 +43,11 @@ export default function Home() {
         <br></br>
         <input type="password" id="password" />
       </div>
-      <button className="mt-10" onClick={handleLogin}>LOGIN</button>
-      {mobile && 
+      <Link href="/tasks" ><button className="mt-10" onClick={handleLogin}>LOGIN</button></Link>
+      {isMobile &&
         <div className="text-sm cursor-pointer underline p-10 my-10" onClick={handleBiometric}>Login using biometric</div>
       }
-      <Link href="/register" className="text-sm absolute bottom-10 underline">Don&apos;t have an account? <span className="font-bold">Register</span></Link>
-    </div>
+      <Link href="/register" className="text-sm underline p-5">Don&apos;t have an account? <span className="font-bold">Register</span></Link>
+    </Fragment>
   );
 }
