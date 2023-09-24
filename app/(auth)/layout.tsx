@@ -9,7 +9,7 @@ export default function LoginLayout({
   return (
     <Fragment>
       <Header style='h-1/4' />
-      <main className='w-screen px-8 flex justify-center flex-col items-center relative top-[25%]'>{children}</main>
+      <main className='w-screen h-auto px-8 flex justify-center flex-col items-center relative top-[25%]'>{children}</main>
     </Fragment>
   );
 }
