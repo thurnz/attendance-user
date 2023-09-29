@@ -1,6 +1,17 @@
 import { Fragment } from 'react';
 
 export default function Tasks() {
+  const TaskStatus = () => {
+    return (
+      <select className='border-black border'>
+        <option value='not started'>Not Started</option>
+        <option value='ongoing'>Ongoing</option>
+        <option value='pending'>Pending</option>
+        <option value='cancelled'>Cancelled</option>
+        <option value='done'>Done</option>
+      </select>
+    );
+  }
 
   return (
     <Fragment>
@@ -21,13 +32,7 @@ export default function Tasks() {
             <tr>
               <td className='pr-2 align-top'>Status:</td>
               <td>
-                <select className='border-black border'>
-                  <option value='not started'>Not Started</option>
-                  <option value='ongoing'>Ongoing</option>
-                  <option value='pending'>Pending</option>
-                  <option value='cancelled'>Cancelled</option>
-                  <option value='done'>Done</option>
-                </select>
+                <TaskStatus />
               </td>
             </tr>
           </tbody>
@@ -47,13 +52,7 @@ export default function Tasks() {
             <tr>
               <td className='pr-2 align-top'>Status:</td>
               <td>
-                <select className='border-black border'>
-                  <option value='not started'>Not Started</option>
-                  <option value='ongoing'>Ongoing</option>
-                  <option value='pending' selected>Pending</option>
-                  <option value='cancelled'>Cancelled</option>
-                  <option value='done'>Done</option>
-                </select>
+                <TaskStatus />
               </td>
             </tr>
           </tbody>
@@ -73,13 +72,7 @@ export default function Tasks() {
             <tr>
               <td className='pr-2 align-top'>Status:</td>
               <td>
-                <select className='border-black border'>
-                  <option value='not started'>Not Started</option>
-                  <option value='ongoing'>Ongoing</option>
-                  <option value='pending'>Pending</option>
-                  <option value='cancelled'>Cancelled</option>
-                  <option value='done' selected>Done</option>
-                </select>
+                <TaskStatus />
               </td>
             </tr>
           </tbody>
@@ -99,13 +92,7 @@ export default function Tasks() {
             <tr>
               <td className='pr-2 align-top'>Status:</td>
               <td>
-                <select className='border-black border'>
-                  <option value='not started'>Not Started</option>
-                  <option value='ongoing'>Ongoing</option>
-                  <option value='pending'>Pending</option>
-                  <option value='cancelled'>Cancelled</option>
-                  <option value='done'>Done</option>
-                </select>
+                <TaskStatus />
               </td>
             </tr>
           </tbody>

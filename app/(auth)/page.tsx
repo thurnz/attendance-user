@@ -1,29 +1,10 @@
 'use client';
-import { useContext, useEffect, Fragment } from 'react';
+import { useContext, Fragment } from 'react';
 import { DataContext } from '@/contexts/context';
 import Link from 'next/link';
-import _ from 'underscore';
 
 export default function Home() {
-  const { isMobile, setIsMobile } = useContext(DataContext);
-
-  useEffect(() => {
-    const handleResize = _.debounce(() => {
-      setIsMobile(window.innerWidth < window.innerHeight);
-    }, 500);
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const handleLogin = () => {
-    console.log('click');
-  };
+  const { isMobile } = useContext(DataContext);
 
   const handleBiometric = () => {
     console.log('bio');
@@ -43,7 +24,7 @@ export default function Home() {
         <br></br>
         <input type="password" id="password" />
       </div>
-      <Link href="/tasks" ><button className="mt-10" onClick={handleLogin}>LOGIN</button></Link>
+      <Link href="/tasks" ><button className="mt-10">LOGIN</button></Link>
       {isMobile &&
         <div className="text-sm cursor-pointer underline p-10 my-10" onClick={handleBiometric}>Login using biometric</div>
       }

@@ -6,7 +6,7 @@ export default function Header({
   style: string 
 }) {
   return (
-    <header className={`fixed w-screen z-10 ${style}`}>
+    <header className={`w-full z-10 ${style}`}>
       <Image
         priority
         className='p-4'
